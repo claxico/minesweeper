@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Minesweeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <skView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wUG-Bu-dHk">
+                                <rect key="frame" x="0.0" y="24" width="834" height="1150"/>
+                                <gestureRecognizers/>
+                            </skView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XEq-lx-F9Q">
+                                <rect key="frame" x="0.0" y="24" width="390" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flags Left: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKQ-uj-d61">
+                                        <rect key="frame" x="10" y="0.0" width="319" height="50"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g9o-jV-6rB">
+                                        <rect key="frame" x="339" y="0.0" width="41" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="IXQ-WS-O1m"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="0.0" left="10" bottom="0.0" right="10"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
+                        <color key="backgroundColor" name="Light Grass"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="wUG-Bu-dHk" secondAttribute="bottom" id="8UL-vm-70h"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="top" secondItem="wUG-Bu-dHk" secondAttribute="top" id="B2E-CJ-sFV"/>
+                            <constraint firstItem="XEq-lx-F9Q" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" id="Ith-oo-2Bn"/>
+                            <constraint firstItem="XEq-lx-F9Q" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" id="jKj-oV-jRt"/>
+                            <constraint firstItem="wUG-Bu-dHk" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" id="lNi-aP-VIr"/>
+                            <constraint firstItem="wUG-Bu-dHk" firstAttribute="trailing" secondItem="4qk-I5-YsI" secondAttribute="trailing" id="noh-TN-ggP"/>
+                            <constraint firstItem="XEq-lx-F9Q" firstAttribute="trailing" secondItem="4qk-I5-YsI" secondAttribute="trailing" id="ppC-Dc-vDF"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="flagsLabel" destination="bKQ-uj-d61" id="2Vn-Ff-0vb"/>
+                        <outlet property="gameScene" destination="wUG-Bu-dHk" id="1a9-qa-jut"/>
+                        <outlet property="timeLabel" destination="g9o-jV-6rB" id="01y-EF-cgU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-826.61870503597129" y="-197.98994974874373"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4Tq-LQ-GbQ">
+            <objects>
+                <viewController id="eHM-M6-HmM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ma0-g1-Yoe">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHw-h2-Jrp">
+                                <rect key="frame" x="87" y="701" width="216" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="New Game" cornerStyle="large">
+                                    <fontDescription key="titleFontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
+                                    <color key="baseBackgroundColor" name="Light Grass"/>
+                                </buttonConfiguration>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="grl-eT-hYg">
+                                <rect key="frame" x="77" y="473" width="236" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FmL-Mk-neW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bkS-VP-DmW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113.84615384615384" y="-197.63033175355449"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Light Grass">
+            <color red="0.34999999403953552" green="0.80000001192092896" blue="0.34999999403953552" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
